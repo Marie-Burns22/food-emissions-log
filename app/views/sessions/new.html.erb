@@ -1,20 +1,25 @@
-<div class="container text-left"> <h1>Student Login Page</h1></div>
+<div class="container"> <h1>Student Login Page</h1></div>
 
 <p><%= flash[:error]%></p>
 
-<div class="container text-left" id="Signup links">
-  <%= link_to "Log in with Google", "/auth/google_oauth2" %> OR
-  <%= link_to "Log in with Github", "/auth/github" %> <br>
-</div><br>
+<form>
+  <div class="container" id="Signup links">
+    <%= link_to "Log in with Google", "/auth/google_oauth2" %> OR
+    <%= link_to "Log in with Github", "/auth/github" %> <br>
+  </div><br>
 
-<div class="container text-left">
-  <p>Or log in with the account you created on this app:</p>
-  <%= form_tag('/login') do %>
-    <label>Select Student:</label>
-    <%= collection_select(:student, :name, Student.all, :name, :name, include_blank: true) %>
-
-    <label>Enter Password:</label>
-    <%= password_field_tag(:password) %><br>
-    <%= submit_tag "Log In" %>
-  <% end %>
-</div>
+  <div class="container">
+    <p>Or log in with the account you created on this app:</p>
+    <%= form_tag('/login') do %>
+      <div class="form-group">
+        <label>Select Student:</label>
+        <%= collection_select(:student, :name, Student.all, :name, :name, include_blank: true) %>
+      </div>
+      <div class="form-group">
+        <label>Enter Password:</label>
+        <%= password_field_tag(:password) %><br>
+      </div>
+      <%= submit_tag "Log In" %>
+    <% end %>
+  </div>
+</form>

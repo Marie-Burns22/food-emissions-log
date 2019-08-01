@@ -1,6 +1,10 @@
 <div class="container text-center">
 
-  <h1>Foods list</h1>
+  <h1 class="text-info">Foods list</h1>
+
+  <%= form_for(foods_path, method: "get") do %>
+    <%= text_field_tag :'food[search]' %>
+  <% end %>
 
   <div class="container">
 

@@ -1,9 +1,9 @@
-<div>
+<div class="container">
   <%= f.label :name, "Food Name" %>
   <%= f.text_field :name %><br>
 </div>
 
-<div>
+<div class="container">
   <%= f.label :category, "Food Category:" %>
   <%= f.select :category, ['Meat', 'Dairy', 'Egg', 'Fruit', 'Vegetable', 'Nuts', 'Legume', 'Mixed dish', 'Fish'], include_blank: true %>
 </div>

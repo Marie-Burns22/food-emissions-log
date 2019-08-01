@@ -1,5 +1,5 @@
-<div class="container text-left" >
-<h4>Edit food name or category:</h4><br>
+<div class="container" >
+<h4 class="text-info">Edit food name or category:</h4><br>
 
 <%= form_for @food do |f| %>
   <%= render :partial => "shared/food_form", locals: {f: f } %><br>
