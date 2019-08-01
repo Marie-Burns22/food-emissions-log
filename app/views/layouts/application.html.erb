@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,22 +13,29 @@
     <%= stylesheet_link_tag "application" %>
 
     <title>Food Emissions</title>
-  </head>
+</head>
 
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="<%= foods_path %>">Food Index</a>
-    <a class="navbar-brand" href="<%= root_path %>">Welcome</a>
-    <% if !logged_in? %>
-      <a class="navbar-brand" href="<%= login_path %>">Login</a>
-      <a class="navbar-brand" href="<%= new_student_path %>">Signup</a>
-    <% else %>
-      <a class="navbar-brand" href="<%= logout_path  %>">Logout</a>
-      <a class="navbar-brand" href="<%= new_emission_path %>">Add Emission Data</a>
-    <% end %>
+<body>
+  <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-info">
+      <a class="navbar-brand" href="<%= foods_path %>" >Food Emissions Index</a>    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#links">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="links">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="<%= root_path %>" >About</a>
+
+        <% if !logged_in? %>
+          <a class="nav-item nav-link" href="<%= login_path %>">Login</a>
+          <a class="nav-item nav-link" href="<%= new_student_path %>">Signup</a>
+        <% else %>
+          <a class="nav-item nav-link" href="<%= logout_path  %>">Logout</a>
+          <a class="nav-item nav-link" href="<%= new_emission_path %>">Add Emission Data</a>
+        <% end %>
+      </div>
+    </div>
 
   </nav>
-
-  <body>
 
     <div class="container"  id="flash" role="main">
      <% flash.each do |key, value| %>
@@ -42,5 +50,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  </body>
+</body>
+
 </html>
