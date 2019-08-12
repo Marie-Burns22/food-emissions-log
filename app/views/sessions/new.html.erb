@@ -1,25 +1,37 @@
-<div class="container"> <h1>Student Login Page</h1></div>
+
 
 <p><%= flash[:error]%></p>
 
-<form>
-  <div class="container" id="Signup links">
-    <%= link_to "Log in with Google", "/auth/google_oauth2" %> OR
-    <%= link_to "Log in with Github", "/auth/github" %> <br>
-  </div><br>
+<div class="col-6 offset-3">
+  <div class="card bg-success">
+    <div class="card-body">
+      <div class="card-header h5 bg-success">Student Login</div>
 
-  <div class="container">
-    <p>Or log in with the account you created on this app:</p>
-    <%= form_tag('/login') do %>
-      <div class="form-group">
-        <label>Select Student:</label>
-        <%= collection_select(:student, :name, Student.all, :name, :name, include_blank: true) %>
+        <form>
+          <div class="card-body outline-success">
+            <p class="card-text"> <%= link_to "Log in with Google", "/auth/google_oauth2" %> OR
+            <%= link_to "Github", "/auth/github" %></p>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Or log in with the account you created on this app:</p>
+            <p class="card-text"> 
+            <%= form_tag('/login') do %>
+              <div class="form-group">
+                <label>Select Student:</label>
+                <%= collection_select(:student, :name, Student.all, :name, :name, include_blank: true) %>
+              </div>
+            </p>
+            <p class="card-text">
+              <div class="form-group">
+                <label>Enter Password:</label>
+                <%= password_field_tag(:password) %><br>
+              </div>
+              <%= submit_tag "Log In" %>
+            <% end %>
+          </p>
+        </form>
+
       </div>
-      <div class="form-group">
-        <label>Enter Password:</label>
-        <%= password_field_tag(:password) %><br>
-      </div>
-      <%= submit_tag "Log In" %>
-    <% end %>
+    </div>
   </div>
-</form>
+</div>

@@ -11,13 +11,13 @@
   <form/>
 
   <div class="container-fluid">
-    <div class="row header-fixed" id="column-headings">
+    <div class="row" id="column-headings">
       <div class="col-6 col-md-2 bg-secondary"><h4 class="text-light">Food</h4></div>
       <div class="col-6 col-md-2 bg-secondary"><h4 class="text-light">Category</h4></div>
-      <div class="d-none d-md-inline col-md-8 bg-secondary border-0">
+      <div class="d-none d-md-block col-md-8 bg-secondary">
         <h4 class="text-light">Units</h4>
         <div class="row bg-light">
-          <div class="col-md-3 bg-secondary border border-0">
+          <div class="col-md-3 bg-secondary">
             kg CO2e per lb of food
             <%= button_to("Sort", foods_path, :method => :get, params: { u:"kg CO2e per lb of food"}) %>
           </div>
@@ -47,7 +47,7 @@
         <div class="col-6 col-md-2">
           <%= link_to "#{food.category}", emissions_path(:category => "#{food.category}") %>
         </div>
-        <div class="d-none d-md-inline col-md-8">
+        <div class="d-none d-md-block col-md-8">
             <div class="row">
               <div class="col-md-3">
                 <%= food.unit_finder("kg CO2e per lb of food") %>
