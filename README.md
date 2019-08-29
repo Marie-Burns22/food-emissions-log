@@ -1,5 +1,6 @@
 # Food Emissions Log - AP Environmental Science app
 Students collaborate to collect and organize greenhouse gas emissions data for foods.
+Demo video: https://drive.google.com/open?id=1QY4YqKFDjWGZRK6e1Og32wRdSopGmXYe
 
 ## Table of contents
 * [General info](#general-info)
