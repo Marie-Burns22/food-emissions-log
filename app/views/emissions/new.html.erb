@@ -2,7 +2,7 @@
   <h1 class="text-info">Add new emissions data</h1><br>
 
   <%= render partial: 'layouts/errors', locals: {object: @emission} %>
-  <form>
+  <%# <form> %>
     <%= form_for(@emission) do |f| %>
 
       <% if !@emission.food.id %>
@@ -18,14 +18,31 @@
           <% end %><br>
           <h4 class="text-success">Enter emission data:</h4>
         </div>
-
       <% else %>
         <h4 class="text-success" >Enter emission data for <%= @emission.food.name %></h4>
-          <%= hidden_field(:emission, :food_id) %>
-        <% end %>
+        <%= hidden_field(:emission, :food_id) %>
+      <% end %>
+      <%# <div class="container" > %>
+      <div class="form-group">
+        <%= f.label :amount, "Amount (enter a number)" %>
+        <%= f.number_field :amount, class: :text_field, min: 0, step: :any, required: true %><br>
+      </div>
 
-    <%= render partial: "emission_form", locals: {f: f } %>
+      <div class="form-group">
+        <%= f.label :unit %>
+        <%= f.select :unit, ['kg CO2e per lb of food', 'lbs of CO2e per serving', 'g of CO2e per serving', 'kg of CO2 per 50 g of protein'] %>
+      </div>
 
-    <% end %>
-  </form>
+      <div class="form-group">
+        <%= f.label :source, 'URL for source of data' %>
+        <%= f.text_field :source, required: true %>
+      </div>
+
+      <%= f.submit %>
+      <%# </div> %>
+
+    <%# <%= render partial: "emission_form", locals: {f: f } %> 
+
+      <% end %>
+    <%# </form> %>
   </div>
