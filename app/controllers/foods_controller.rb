@@ -2,6 +2,7 @@ class FoodsController < ApplicationController
   skip_before_action :require_login, only: [:index, :show]
 
   def index #Refactor to make dry by passing the params[:u] to the scope method.
+
     if params[:u]
       @foods = Food.joins(:emissions).where( "emissions.unit = ?", params[:u] ).order(:amount)
     elsif params[:u] == "lbs of CO2e per serving"
