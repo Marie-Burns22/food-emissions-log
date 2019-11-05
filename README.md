@@ -37,7 +37,13 @@ To-do list:
 * Replace seed data with real data.
 
 ## Status
-Project is: functional, but data is not accurate.
+Project is: functional for adding emissions data.
+
+## Todo
+* Add method in emissions model to convert all units to either kg of CO2e per serving or per kilogram of food.
+* Build frontend app that uses this data as an api.  Students will select a food and enter their servings. Then a method in the emissions model will convert servings(based on category) to kg and return the emissions in kgCO2.
+* Use https://www.cleanmetrics.com/carbonscopedata/browse.aspx for the data.  
+
 
 ## Inspiration
 Project inspired by my students and their desire to learn and reduce their greenhouse gas emissions.

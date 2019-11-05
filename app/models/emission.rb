@@ -21,4 +21,25 @@ class Emission < ApplicationRecord
     self.food = food if food.valid?
   end
 
+  def convert(unit, amount)
+    # This method is for the MVC version that creates new emission instances.
+    # It will take in the unit (from a drop down menu) and the amount.
+    # Will return kgCO2e per kg of food
+  end
+
+  def servings_to_kg(servings, category)
+    # This method is for the mobile/React frontend app.
+    # Student enters the number of servings (can be less than 1) of a food.
+    # Based on category of food, returns the kgs of food in the serving.
+  end
+
+  def emissions_per_input(kg, food)
+    # Accepts the kg returned by servings_to_kg and the name of the food.
+    # queries the emissions for the food
+    # multiples the emissions by the kg.
+    # returns the emissions for the amount of food entered.
+    # rendered in the mobile/react app
+  end
+
+
 end
